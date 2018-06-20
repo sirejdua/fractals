@@ -1,7 +1,7 @@
 #include "julia.hpp"
 
 Julia::Julia() {
-    maxIter = 1000;
+    maxIter = 15;
     radius = 2;
     c = Complex(1 - PHI, 0);
 }

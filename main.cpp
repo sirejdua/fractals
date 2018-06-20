@@ -28,10 +28,10 @@ int main() {
     myfile << j.resx << " " << j.resy << endl;
     std::vector< std::vector< double > > output = j.generate();
     for (std::vector<double> row: output) {
-	for (double br: row) {
-	    myfile << br << " ";
-	}
-	myfile << endl;
+        for (double br: row) {
+            myfile << br << " ";
+        }
+        myfile << endl;
     }
     myfile.close();
 
@@ -40,9 +40,9 @@ int main() {
     int resx = 40;
     double target = x*(2.5 - 1.0)/resx + 2.5;
     cout << target << endl;
-    cout << j.mapping(0, 0) << endl;
-    cout << j.mapping(2, 4) << endl;
-    cout << j.mapping(10, 20) << endl;
+//    cout << j.mapping(0, 0) << endl;
+//    cout << j.mapping(2, 4) << endl;
+//    cout << j.mapping(10, 20) << endl;
 
     
 

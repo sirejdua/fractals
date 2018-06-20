@@ -12,7 +12,9 @@ def main(fname):
             frame[i][j] = float(val)
 
     plt.imshow(frame, cmap=plt.cm.BuPu_r)
+    plt.imsave('julia.png', frame, cmap=plt.cm.BuPu_r)
     plt.show()
+
 
 
 if __name__ == '__main__':

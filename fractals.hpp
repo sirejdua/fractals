@@ -23,4 +23,5 @@ class Fractal {
         Complex mapping(int x, int y);
 };
 
+#include "fractals.tpp"
 #endif

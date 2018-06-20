@@ -6,8 +6,8 @@ using namespace std;
 
 template <class T>
 Fractal<T>::Fractal() {
-    resx = 40;
-    resy = 40;
+    resx = 1920;
+    resy = 1920;
     G = T();
 }
 
@@ -38,8 +38,8 @@ template <class T>
 Complex Fractal<T>::mapping(int x, int y) {
     double startx = -2;
     double endx = 2;
-    double starty = -1;
-    double endy = 1;
+    double starty = -2;
+    double endy = 2;
     // ^ these are scale parameters that can be changed later, passed as input.
     // [-2.5, 1] x [-1, 1] is recommended by wikipedia
     double target_x = x*(endx - startx)/resx + startx;
