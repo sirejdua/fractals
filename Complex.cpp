@@ -2,6 +2,7 @@
 // addition, subtraction, multiplication, (division?)
 
 #include <iostream>
+#include <cmath>
 #include "Complex.hpp"
 using namespace std;
 
@@ -21,6 +22,10 @@ double Complex::getx() const {
 
 double Complex::gety() const {
     return y;
+}
+
+double Complex::mod() const {
+    return sqrt(x*x + y*y);
 }
 
 Complex Complex::inv() {

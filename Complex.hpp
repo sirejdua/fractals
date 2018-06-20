@@ -2,16 +2,19 @@
 #define COMPLEX_H
 #include <iostream>
 
+#define PHI 1.61803398875
+
 class Complex
 {
     private:
-        int x;
-        int y;
+        double x;
+	double y;
     public:
         Complex();
         Complex(double, double);
         double getx() const;
         double gety() const;
+	double mod() const;
         Complex inv();
         Complex add(Complex);
         Complex sub(Complex);
@@ -25,4 +28,5 @@ class Complex
 };
 
 std::ostream &operator<<(std::ostream &strm, const Complex &c); 
+
 #endif
