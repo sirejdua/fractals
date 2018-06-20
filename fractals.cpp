@@ -13,22 +13,23 @@ vector< vector<double> > Fractal::generate() {
 	for (int j = 0; j < resy; j++) {
 	    z = mapping(i, j);
 	    iter = 0;
-	    cout << z << ", ";
-
+//cout << z << ", ";
+        // This is what we want to do with templates!
+        // iter = computer(z);
 	    while ((z.mod() < radius) && (iter < maxIter)) {
-		z = map(z);
-		iter++;
+            z = map(z);
+            iter++;
 	    }
 	    brightness[j][i] = 1 - (double) iter / maxIter;
 	}
-	cout << endl;
+//cout << endl;
     }
     return brightness;
 }
 
 Complex Fractal::mapping(int x, int y) {
-    double startx = -2.5;
-    double endx = 1;
+    double startx = -2;
+    double endx = 2;
     double starty = -1;
     double endy = 1;
     // ^ these are scale parameters that can be changed later, passed as input.
