@@ -18,7 +18,8 @@ int main() {
     cout << "D: " << d << endl << "E: " << e << endl;
     Complex f = d * d;
     cout << "F: "<< f << endl;
-    Julia j(800, 400, 1000, 2, Complex(1-PHI, 0));
+    //Julia j(800, 400, 1000, 2, Complex(1-PHI, 0));
+    Fractal<Julia> j;
 
     ofstream myfile;
     myfile.open("output.txt");

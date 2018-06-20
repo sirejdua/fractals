@@ -4,30 +4,38 @@
 
 using namespace std;
 
-vector< vector<double> > Fractal::generate() {
+template <class T>
+Fractal<T>::Fractal() {
+    resx = 40;
+    resy = 40;
+    G = T();
+}
+
+template <class T>
+Fractal<T>::Fractal(int x, int y) {
+    resx = x;
+    resy = y;
+    G = T();
+}
+
+template <class T>
+vector< vector<double> > Fractal<T>::generate() {
     vector< vector<double> > brightness;
     Complex z;
-    int iter;
+    double b;
     brightness.resize(resy, vector<double>(resx, 0));
     for (int i = 0; i < resx; i++) {
-	for (int j = 0; j < resy; j++) {
-	    z = mapping(i, j);
-	    iter = 0;
-//cout << z << ", ";
-        // This is what we want to do with templates!
-        // iter = computer(z);
-	    while ((z.mod() < radius) && (iter < maxIter)) {
-            z = map(z);
-            iter++;
-	    }
-	    brightness[j][i] = 1 - (double) iter / maxIter;
-	}
-//cout << endl;
+        for (int j = 0; j < resy; j++) {
+            z = mapping(i, j);
+            b = G.computer(z);
+            brightness[j][i] = 1 - b; // b;
+        }
     }
     return brightness;
 }
 
-Complex Fractal::mapping(int x, int y) {
+template <class T>
+Complex Fractal<T>::mapping(int x, int y) {
     double startx = -2;
     double endx = 2;
     double starty = -1;
@@ -38,3 +46,4 @@ Complex Fractal::mapping(int x, int y) {
     double target_y = y*(starty - endy)/resy + endy;
     return Complex(target_x, target_y);
 }
+

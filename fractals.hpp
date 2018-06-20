@@ -5,15 +5,21 @@
 #include <vector>
 #include "Complex.hpp"
 
+// Assuming the templating class has the method
+// `int computer(Complex)`
+// implemented.
+
+template <class T>
 class Fractal {
     public:
+        Fractal();
+        Fractal(int, int);
         int resx;
         int resy;
-        int maxIter;
-	double radius;
-	// this is for child classes
-	virtual Complex map(Complex) = 0;
-	std::vector< std::vector<double> > generate();
+        // This is our generator G.
+        T G;
+
+        std::vector< std::vector<double> > generate();
         Complex mapping(int x, int y);
 };
 
