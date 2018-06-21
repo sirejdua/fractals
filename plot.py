@@ -12,7 +12,7 @@ def main(fname):
             frame[i][j] = float(val)
 
     plt.imshow(frame, cmap=plt.cm.BuPu_r)
-    plt.imsave('julia.png', frame, cmap=plt.cm.BuPu_r)
+    plt.imsave(f'{fname}.png', frame, cmap=plt.cm.BuPu_r)
     plt.show()
 
 

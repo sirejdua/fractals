@@ -2,13 +2,11 @@
 #define JULIA_H
 
 #include "Complex.hpp"
+#include "generator.hpp"
 
-class Julia{
+class Julia: public Generator {
     public:
-    	//using Fractal::generate;
-        double radius;
         Complex c;
-        int maxIter;
 
         Julia();
         Julia(int, double, double, double);
